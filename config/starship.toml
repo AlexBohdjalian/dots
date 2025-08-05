@@ -2,6 +2,9 @@ format = """$directory$git_branch$character"""
 
 [directory]
 style = "blue"
+truncation_length = 0
+truncate_to_repo = false
+fish_style_pwd_dir_length = 0
 format = "[$path]($style) "
 
 [git_branch]
