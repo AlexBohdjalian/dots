@@ -122,6 +122,10 @@ main() {
         "tmux"
     )
 
+    config_files=(
+        "starship.toml"
+    )
+
     # Create dotfiles config directory for custom user configurations
     if [[ ! -d "$HOME/.config/dots" ]]; then
         echo "📁 Creating ~/.config/dots directory"
@@ -137,6 +141,10 @@ main() {
 
     for dir in "${config_dirs[@]}"; do
         create_symlink "$DOTFILES_DIR/config/$dir" "$HOME/.config/$dir" || true
+    done
+
+    for file in "${config_files[@]}"; do
+        create_symlink "$DOTFILES_DIR/config/$file" "$HOME/.config/$file" || true
     done
 
     # Link custom directory for user customizations
