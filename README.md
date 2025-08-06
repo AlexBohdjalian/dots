@@ -4,6 +4,16 @@ Personal shell configuration for zsh and CLI tools.
 
 ## Installation
 
+First, install the required packages using brew:
+
+```bash
+brew install bat git-delta eza fd fzf gh jq neovim starship tmux zoxide
+```
+
+For the icons that come with `eza` to properly work, you will also need a NerdFont like [FiraCode](https://www.nerdfonts.com/font-downloads#:~:text=Preview-,FiraCode,-%E2%80%A2%20Version%3A%206.2).
+
+Then, run the install script:
+
 ```bash
 ./install.zsh
 ```
