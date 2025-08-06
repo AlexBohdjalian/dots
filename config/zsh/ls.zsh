@@ -21,3 +21,6 @@ fi
 
 # Enable colours for completion matches (if using zsh completion)
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Auto-complete should be case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
