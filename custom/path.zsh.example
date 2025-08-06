@@ -1,2 +1,9 @@
 # Add additional items to the PATH
 #export PATH=~/bin:$PATH
+
+# Add custom directories to places to search from globally
+# cdpath=(
+#     ~/somewhere/place/
+# )
+
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
