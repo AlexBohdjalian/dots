@@ -12,5 +12,5 @@ style = "purple"
 format = "on [$branch]($style) "
 
 [character]
-success_symbol = "[❯](green) "
-error_symbol = "[❯](red) "
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
