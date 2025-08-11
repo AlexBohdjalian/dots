@@ -117,12 +117,9 @@ main() {
         "tmux.conf"
     )
 
-    config_dirs=(
+    configs=(
         "zsh"
         "tmux"
-    )
-
-    config_files=(
         "starship.toml"
     )
 
@@ -139,12 +136,8 @@ main() {
         create_symlink "$DOTFILES_DIR/dots/$file" "$HOME/.$file" || true
     done
 
-    for dir in "${config_dirs[@]}"; do
-        create_symlink "$DOTFILES_DIR/config/$dir" "$HOME/.config/$dir" || true
-    done
-
-    for file in "${config_files[@]}"; do
-        create_symlink "$DOTFILES_DIR/config/$file" "$HOME/.config/$file" || true
+    for config in "${configs[@]}"; do
+        create_symlink "$DOTFILES_DIR/config/$config" "$HOME/.config/$config" || true
     done
 
     # Link custom directory for user customizations

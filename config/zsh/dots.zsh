@@ -44,12 +44,9 @@ doctor() {
         "tmux.conf"
     )
 
-    local config_dirs=(
+    local configs=(
         "zsh"
         "tmux"
-    )
-
-    local config_files=(
         "starship.toml"
     )
 
@@ -57,12 +54,8 @@ doctor() {
         check_symlink_health "$HOME/.$file" "$DOTFILES_DIR/dots/$file" "~/.$file"
     done
 
-    for dir in "${config_dirs[@]}"; do
-        check_symlink_health "$HOME/.config/$dir" "$DOTFILES_DIR/config/$dir" "~/.config/$dir"
-    done
-
-    for file in "${config_files[@]}"; do
-        check_symlink_health "$HOME/.config/$file" "$DOTFILES_DIR/config/$file" "~/.config/$file"
+    for config in "${configs[@]}"; do
+        check_symlink_health "$HOME/.config/$config" "$DOTFILES_DIR/config/$config" "~/.config/$config"
     done
 
     # Check custom directory symlink
