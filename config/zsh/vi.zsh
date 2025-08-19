@@ -1,3 +1,3 @@
-# I prefer to use emacs keybindings in zsh, rather than vi
-# bindkey -v
+# Configure word boundaries for more intuitive word-based navigation and emacs key binding
+WORDCHARS='*?_[]~=&;!#$%^(){}<>'
 bindkey -e
