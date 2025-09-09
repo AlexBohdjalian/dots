@@ -20,3 +20,15 @@ autoload -Uz _zinit
 for file in ~/.config/dots/custom/*.zsh(N); do
     [ -r "$file" ] && source "$file"
 done
+
+# Wake up protocol
+WAKE_UP_LOCK_FILE="$HOME/.config/dots/custom/wake-up-protocol.lock"
+if [ ! -f "$WAKE_UP_LOCK_FILE" ]; then
+    touch "$WAKE_UP_LOCK_FILE"
+    (
+        (
+            trap 'rm -f "$WAKE_UP_LOCK_FILE"' EXIT
+            bash "$HOME/.config/dots/custom/wake-up-protocol.sh"
+        ) &
+    ) # Hide output with sub-shell
+fi

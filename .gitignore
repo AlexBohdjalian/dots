@@ -1,4 +1,7 @@
+!custom/path.zsh.example
+!custom/wake-up-protocol.sh
+
 .DS_Store
-custom
+custom/*
 config/tmux/plugins
 .vscode
